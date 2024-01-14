@@ -1,0 +1,26 @@
+[package]
+name = "actix-postgres"
+version = "0.1.0"
+authors = ["wafeishushu"]
+edition = "2021"
+
+
+[dependencies]
+# Actix web framework and run-time
+actix-web = "4.4.1"
+actix-rt = "2.9.0"
+
+# Environment access
+dotenv = "0.15.0"
+
+# Database access
+sqlx = {version = "0.7.3", default_features = false, features = ["postgres","runtime-tokio-native-tls", "macros","chrono"]}
+
+# Data serialization library
+serde = { version = "1.0.195", features = ["derive"] }
+
+# Other utils
+chrono = {version = "0.4.31", features = ["serde"]}
+
+# Openssl for linux build
+openssl = { version = "0.10.62", features = ["vendored"] }
